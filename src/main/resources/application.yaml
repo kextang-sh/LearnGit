@@ -1,0 +1,43 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri:  https://apc.stubhubdev.com/identity/oauth/v1/.well-known/jwks.json
+      client:
+        registration:
+          stubhub:
+            client-id: tNZf3okc119BLIUGw0oeiMRXp4Ua
+            client-secret: e3QeQpn31hXlk8aGGgMdGt9t8b8a
+            authorization-grant-type: client_credentials
+            client-name: payments
+        provider:
+          stubhub:
+            token-uri: https://apc.stubhubdev.com/identity/oauth/v1/token
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 100MB
+      file-size-threshold: 0B
+
+management:
+  endpoints:
+    management:
+      endpoints:
+    web:
+      exposure:
+        include: '*'
+      base-path: '/'
+  endpoint:
+    health:
+      show-details: when_authorized
+
+gcp:
+  bigquery:
+    demo:
+      project: payments-platform-dev-17663
+      dataset: sample
+
+server:
+  port: 9090

@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    gcp:
+      spanner:
+        project-id: spanner-dev-51583
+        instance-id: spanner-dev
+        database: sample_test
+
+logging:
+  level:
+    root: INFO

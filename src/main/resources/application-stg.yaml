@@ -1,0 +1,27 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri:  https://apc.stubhubstage.com/identity/oauth/v1/.well-known/jwks.json
+      client:
+        registration:
+          stubhub:
+            client-id: eQhaK1i_cVINqOsQEwHo8Fn4RdMa
+            client-secret: te_VfJQesNcUij3fIIJKBcRHajsa
+            authorization-grant-type: client_credentials
+            client-name: payments
+        provider:
+          stubhub:
+            token-uri: https://apc.stubhubstage.com/identity/oauth/v1/token
+  cloud:
+    gcp:
+      spanner:
+        project-id: spanner-stg-63055
+        instance-id: spanner-stg
+        database: seller-payment-instrument
+
+
+logging:
+  level:
+    root: INFO
